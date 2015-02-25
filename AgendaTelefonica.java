@@ -22,10 +22,36 @@ public class AgendaTelefonica
     /**
      * Consulta de un nombre y retorna el numero de telefono 
      */
-    public String lookupNumber(String nombre)
+    public String consulta(String nombre)
     {
         String tel = agenda.get(nombre);     
         return tel;
 
     }
+
+    /**
+
+     * Añadir un nombre con su teléfono
+
+     */
+
+    public void añadirTelefono(String nombre, String telefono)
+    {
+        agenda.put(nombre,telefono);
+    }
+
+    public boolean estaIncluido(String nombre) 
+    {
+        return agenda.containsKey(nombre);
+    }
+
+    /**
+     * Imprime todas las llaves
+     */
+    public void printAllNames()
+    {
+        Set keyset = agenda.keySet ();
+        System.out.println("Key set values are: " + keyset);
+    }
+
 }
